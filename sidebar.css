@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f4f6fb;
+  color: #222;
+  display: flex;
+}
+
+.sidebar {
+  width: 270px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.08);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transition: width 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+}
+.sidebar__logo img {
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.sidebar__link .icon {
+  font-size: 1.3rem;
+}
+.sidebar__link:hover, .sidebar__link.active {
+  background: rgba(255,255,255,0.08);
+  color: #ffd700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 0 0 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar__profile img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffd700;
+}
+.sidebar__profile-name {
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+.sidebar__profile-role {
+  font-size: 0.92rem;
+  color: #ffd700;
+}
+
+.main-content {
+  margin-left: 270px;
+  padding: 2.5rem 2rem;
+  flex: 1;
+  min-height: 100vh;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 70px;
+    padding: 1.2rem 0.5rem;
+  }
+  .sidebar__logo span,
+  .sidebar__link span:not(.icon),
+  .sidebar__profile div {
+    display: none;
+  }
+  .main-content {
+    margin-left: 70px;
+  }
+}
